@@ -482,7 +482,7 @@
                                         <!-- badge -->
                                         <div class="text-center position-relative">
                                             <!-- img -->
-                                            <a href="#!"><img src="{{ asset('assets/uploads/articles_images/'.$value->image) }}" style="height: 250px" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"/></a>
+                                            <a href="#!"><img src="{{ $value->image ? asset('assets/uploads/articles_images/'.$value->image) : asset('assets/uploads/articles_images/defaut.jpg') }}" style="height: 250px" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"/></a>
                                             <!-- action btn -->
                                             <!-- action btn -->
                                         </div>

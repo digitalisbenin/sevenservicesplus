@@ -156,11 +156,11 @@
                         <div class="card-body py-4 mt-2">
 
                             <div class="d-flex justify-content-center mb-4">
-                                <img src="{{ asset('assets/uploads/articles_images/avatar-1.webp') }}"
+                                <img src="{{ asset('assets/uploads/articles_image/avatar-1.webp') }}"
                                      class="rounded-circle shadow-1-strong" width="100" height="100" />
                             </div>
-                            <h5 class="font-weight-bold">Teresa May</h5>
-                            <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+                            <h5 class="font-weight-bold">Eric </h5>
+                            <!--<h6 class="font-weight-bold my-3">Founder at ET Company</h6>-->
                             <ul class="list-unstyled d-flex justify-content-center">
                                 <li>
                                     <i class="fas fa-star fa-sm text-info"></i>
@@ -191,11 +191,11 @@
                         <div class="card-body py-4 mt-2">
 
                             <div class="d-flex justify-content-center mb-4">
-                                <img src="{{ asset('assets/uploads/articles_images/avatar-4.webp') }}"
+                                <img src="{{ asset('assets/uploads/articles_image/avatar-4.webp') }}"
                                      class="rounded-circle shadow-1-strong" width="100" height="100" />
                             </div>
-                            <h5 class="font-weight-bold">Maggie McLoan</h5>
-                            <h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>
+                            <h5 class="font-weight-bold">Gaston</h5>
+                            <!--<h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>-->
                             <ul class="list-unstyled d-flex justify-content-center">
                                 <li>
                                     <i class="fas fa-star fa-sm text-info"></i>
@@ -225,11 +225,11 @@
                         <div class="card-body py-4 mt-2">
 
                             <div class="d-flex justify-content-center mb-4">
-                                <img src="{{ asset('assets/uploads/articles_images/avatar-3.webp') }}"
+                                <img src="{{ asset('assets/uploads/articles_image/avatar-3.webp') }}"
                                      class="rounded-circle shadow-1-strong" width="100" height="100" />
                             </div>
-                            <h5 class="font-weight-bold">Alexa Horwitz</h5>
-                            <h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>
+                            <h5 class="font-weight-bold">Esther</h5>
+                            <!--<h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>-->
                             <ul class="list-unstyled d-flex justify-content-center">
                                 <li>
                                     <i class="fas fa-star fa-sm text-info"></i>

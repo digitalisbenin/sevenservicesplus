@@ -12,11 +12,13 @@ use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PubliciteController;
+use App\Http\Controllers\DocumentController;
 use App\Models\Article;
 use App\Models\Categorie;
 use App\Models\Commande;
 use App\Models\Livreur;
 use App\Models\Site;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Temoignage;
 use Illuminate\Support\Facades\Route;
 
@@ -106,14 +108,26 @@ Route::get('/contact', function () {
 //     return view('authentication.forgot-password');
 // });
 
+// Route::get('/dashboard', function () {
+//     $categorie = Site::all();
+//     $article = Article::where('disponible','1')->get();
+//     $articlee = Article::where('disponible','1')->take(30)->get();
+//     // $commande = Commande::all();
+//     // $temoignage = Temoignage::orderBy('created_at', 'desc')->take(3)->get();
+//     return view('dashboard', compact('categorie', 'article','articlee'));
+// })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard', function () {
-    $categorie = Site::all();
-    $article = Article::where('disponible','1')->get();
-    $articlee = Article::where('disponible','1')->take(30)->get();
-    // $commande = Commande::all();
-    // $temoignage = Temoignage::orderBy('created_at', 'desc')->take(3)->get();
-    return view('dashboard', compact('categorie', 'article','articlee'));
+    if (Auth::check() && Auth::user()->role_id == 1) {
+        $categorie = Site::all();
+        $article = Article::where('disponible', '1')->get();
+        $articlee = Article::where('disponible', '1')->take(30)->get();
+
+        return view('dashboard', compact('categorie', 'article', 'articlee'));
+    } else {
+        return redirect('/documents');
+    }
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 // Route::get('admin-panel', function () {
 //     $categorie = Categorie::all();
@@ -194,6 +208,15 @@ Route::post('create-new-article', [ArticlesController::class, 'store']);
 Route::get('articles/{id}/edit', [ArticlesController::class, 'edit']);
 Route::put('articles/{id}/update', [ArticlesController::class, 'update']);
 Route::get('articles/{id}/destroy', [ArticlesController::class, 'destroy']);
+
+
+/*------------------------ Documents ----------------------------*/
+Route::get('documents', [DocumentController::class, 'index']);
+Route::get('create-documents', [DocumentController::class, 'create']);
+Route::post('create-new-documents', [DocumentController::class, 'store']);
+Route::get('documents/{id}/edit', [DocumentController::class, 'edit']);
+Route::put('documents/{id}/update', [DocumentController::class, 'update']);
+Route::get('documents/{id}/destroy', [DocumentController::class, 'destroy']);
 
 /*------------------------ Categories ----------------------------*/
 Route::get('categories', [CategoriesController::class, 'index']);
