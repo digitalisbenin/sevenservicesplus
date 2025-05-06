@@ -20,25 +20,29 @@
                     <div class="row mb-8">
                         <div class="col-md-12">
                             <div
-                                class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
+                                class="d-flex flex-column flex-md-row  align-items-md-center gap-2">
                                 <!-- pageheader -->
-                                <div>
-                                    <h2>Documents</h2>
+                                <div class="w-50">
+                                    <h2>Mes documents</h2>
                                     <!-- breacrumb -->
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb mb-0">
                                             <li class=""><a href="{{ url('dashboard') }}"
-                                                                           class="text-inherit">Dashboard</a></li>/
-                                            <li class="breadcrumb-item active" aria-current="page">Documents</li>
+                                                                           class="text-inherit"></a></li>
+                                            <li class="breadcrumb-item active" aria-current="page"></li>
                                         </ol>
                                     </nav>
                                 </div>
                                 <!-- button -->
-                                <div>
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <input type="text" id="searchInput" class="form-control w-50" placeholder="Rechercher un document...">
+                            
+                                    <div class=" w-100  mb-3">
+                                        <input type="text" id="searchInput" class="form-control w-250" placeholder="Rechercher un document...">
 
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#nameModal" class="btn btn-primary ms-2">
+                                       
+                                    </div>
+                                    <div class="w-50 mb-3">
+                                       
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#nameModal" class="btn btn-primary ms-2 ">
                                             Ajouter un Document
                                         </a>
                                     </div>
@@ -86,32 +90,14 @@
                                       </div>
 <!-- Modal -->
     </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-12 col-12 mb-5">
+                        <div class="col-xl-12 col-12 mb-1">
                             <!-- card -->
                             <div class="card h-100 card-lg">
-                                {{--  <div class="px-6 py-6">
-                                    <div class="row justify-content-between">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
-                                            <!-- form -->
-                                            <form class="d-flex" role="search">
-                                                <input class="form-control" type="search" placeholder="Search Category"
-                                                       aria-label="Search"/>
-                                            </form>
-                                        </div>
-                                        <!-- select option -->
-                                        <div class="col-xl-2 col-md-4 col-12">
-                                            <select class="form-select">
-                                                <option selected>Status</option>
-                                                <option value="Published">Published</option>
-                                                <option value="Unpublished">Unpublished</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>  --}}
+                                
                                 <!-- card body -->
                                 <div class="card-body p-0">
                                     <!-- table -->
@@ -120,48 +106,48 @@
                                             class="table table-centered table-hover mb-0 text-nowrap table-borderless table-with-checkbox">
                                             <thead class="bg-light">
                                             <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                               id="checkAll"/>
-                                                        <label class="form-check-label" for="checkAll"></label>
-                                                    </div>
-                                                </th>
+                                                <!--<th>-->
+                                                <!--    <div class="form-check">-->
+                                                <!--        <input class="form-check-input" type="checkbox" value=""-->
+                                                <!--               id="checkAll"/>-->
+                                                <!--        <label class="form-check-label" for="checkAll"></label>-->
+                                                <!--    </div>-->
+                                                <!--</th>-->
                                                 <th>N°</th>
 
-                                                <th>Titre</th>
-                                                <th>Description</th>
-                                                <th>Voir les documents</th>
-                                                <th class="">Actions</th>
+                                                <th class="text-center">NOM DU FICHER</th>
+
+                                                <th class=""></th>
                                             </tr>
                                             </thead>
                                             <tbody id="categoryTable" >
                                             @foreach($categorie as $key => $value)
                                                 <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   id="categoryOne"/>
-                                                            <label class="form-check-label" for="categoryOne"></label>
-                                                        </div>
-                                                    </td>
+                                                    <!--<td>-->
+                                                    <!--    <div class="form-check">-->
+                                                    <!--        <input class="form-check-input" type="checkbox" value=""-->
+                                                    <!--               id="categoryOne"/>-->
+                                                    <!--        <label class="form-check-label" for="categoryOne"></label>-->
+                                                    <!--    </div>-->
+                                                    <!--</td>-->
 
                                                     <td><a href="#" class="text-reset">{{ $key+1 }}</a></td>
 
-                                                    <td class="category-title" ><a href="#" class="text-reset">{{ $value -> titre }}</a></td>
-                                                    <td class="category-description" style="max-width: 250px; word-wrap: break-word; white-space: normal;"><a href="#" class="text-reset">{{ $value -> description }}</a></td>
+                                                    <td class="category-title text-center" ><a href="#" class="text-reset">{{ $value -> titre }}</a></td>
+                                                    <!--<td class="category-description" style="max-width: 250px; word-wrap: break-word; white-space: normal;"><a href="#" class="text-reset">{{ $value -> description }}</a></td>-->
 
-                                                    <td class="text-center" ><a href="{{asset('assets/uploads/documents/'.$value->document)}}" target="blank" class="text-inherit"  ><i class="feather-icon icon-eye fs-2"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Voir ce document"></i></a></td>
+                                                    <!--<td class="text-center" ></td>-->
 
 
                                                     <td>
+                                                        <a href="{{asset('assets/uploads/documents/'.$value->document)}}" target="blank" class="text-inherit"  ><i class="feather-icon icon-eye fs-2 me-3"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Voir ce document"></i></a>
                                                         <a class="btn"  href="#"
 
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#editModal{{ $value->id }}"
                                                         data-id="{{ $value->id }}"
                                                         data-name="{{ $value->titre }}">
-                                                            <i class="bi bi-pencil-square me-3"></i>
+                                                            <i class="bi bi-pencil-square fs-2 me-3"></i>
 
                                                         </a>
 
@@ -169,7 +155,7 @@
 
 
                                                                     <a class="btn" href="{{url('documents/'.$value->id.'/destroy')}}">
-                                                                        <i class="bi bi-trash me-3"></i>
+                                                                        <i class="bi bi-trash fs-2 me-3"></i>
 
                                                                     </a>
 
